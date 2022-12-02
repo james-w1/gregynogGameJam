@@ -37,3 +37,8 @@ shape = SubResource( 1 )
 scale = Vector2( 0.311, 0.313508 )
 frames = SubResource( 2 )
 animation = "down"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.3, 0.3 )
+smoothing_enabled = true

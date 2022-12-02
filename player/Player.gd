@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 
+var camera2d
 var velocity = Vector2()
 var last_direction = Vector2(0, 1)
 
@@ -54,6 +55,7 @@ func _physics_process(delta):
 	get_input()
 	animate_gamer(velocity) # animate the player character
 	velocity = move_and_slide(velocity) # move the player character
+	camera2d = get_node("Camera2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
