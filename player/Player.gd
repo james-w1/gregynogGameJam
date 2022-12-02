@@ -7,12 +7,16 @@ var velocity = Vector2()
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("right"):
+		$AnimatedSprite.play('Up')
 		velocity.x += 1
 	if Input.is_action_pressed("left"):
+		$AnimatedSprite.play('Up')
 		velocity.x -= 1
 	if Input.is_action_pressed("down"):
+		$AnimatedSprite.play('Down')
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
+		$AnimatedSprite.play('Up')
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
 
