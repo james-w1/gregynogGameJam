@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="GregynogGameJam"
-run/main_scene="res://background.tscn"
+run/main_scene="res://Background.tscn"
 config/icon="res://player/playerIcon.png"
 
 [gdnative]
