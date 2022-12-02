@@ -37,18 +37,16 @@ func animate_gamer(direction: Vector2):
 		
 		# Match the last direction to the way the player is facing and flip
 		match vector_to_direction(last_direction):
-			"down":
-				$AnimatedSprite.play("down")
-				$AnimatedSprite.flip_h = false
-			"up":
-				$AnimatedSprite.play("up")
-				$AnimatedSprite.flip_h = false
 			"right":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = false
 			"left":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = true
+			"down":
+				$AnimatedSprite.play("down")
+			"up":
+				$AnimatedSprite.play("up")
 	else: #if not moving
 		$AnimatedSprite.play("default")
 
