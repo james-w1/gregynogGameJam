@@ -13,6 +13,11 @@ radius = 18.0278
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "qsStuck",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "kidSpeak",
@@ -22,6 +27,11 @@ animations = [ {
 "loop": true,
 "name": "kidStand",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "qsSaved",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
@@ -66,7 +76,7 @@ shape = SubResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2.84217e-14, -2.38419e-07 )
 frames = SubResource( 1 )
-animation = "npc1Speak"
+animation = "qsSaved"
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -86,6 +96,7 @@ margin_left = -14.0
 margin_top = -7.0
 margin_right = 14.0
 margin_bottom = 7.0
+custom_colors/font_color = Color( 0, 1, 0.0196078, 1 )
 
 [node name="ChoiceB" type="Area2D" parent="."]
 position = Vector2( 35, -7 )
@@ -98,6 +109,7 @@ margin_left = -14.0
 margin_top = -7.0
 margin_right = 14.0
 margin_bottom = 7.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
 }

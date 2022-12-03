@@ -3,16 +3,20 @@ extends Area2D
 var playerInside = false
 var speakCounter = 0
 var dict = {
-	0: """François Viète, the guy who put letters in maths.""",
-	1: """ You've been selected as a potential candidate for ... """,
-	2: """'less evil prime minister than Rishi Sunak'.""",
-	3: """The trials ahead will test your dedication to the ...""",
-	4: """people of Britain. Failure means banishment back to the circle ...""",
-	5: """of hell from whence you came. Good luck.""",
-	6: "give the kid an icecream?",
-	7: "do u wanna kill the child?",
-	9: ""
+	0: """François Viète, the guy who put letters in maths. You've been selected as a potential candidate for ...""",
+	1: """'less evil prime minister than Rishi Sunak'. The trials ahead will test your dedication to the ...""",
+	2: """people of Britain. Failure means banishment back to the circle of hell from whence you came. Good luck.""",
+	3: "give the kid an icecream?",
+	4: "do u wanna kill the child?",
+	5: ""
 }
+var questions = [4, 5]
+# options to choose from
+# [choiceA, choiceB, karmaA, karmaB]
+var options = [
+	["yes", "no", 100, 0],
+	["save", "kill", 0, -100]
+]
 
 var lastBody
 var maxSpeech = len(dict) - 1
@@ -23,14 +27,7 @@ var annoyedText = "go away"
 var choosing = false
 var mouseInChoiceA = false
 var mouseInChoiceB = false
-# options to choose from
-# [choiceA, choiceB, karmaA, karmaB]
-var options = [
-	["yes", "no", 100, 0],
-	["kill", "save", -100, 0]
-]
 var choicesCounter = 0
-var questions = [7, 8]
 
 onready var SpeechBubble = get_node("SpeechBubble")
 onready var SpeechBubbleText = get_node("SpeechBubble/Speech")
@@ -104,7 +101,6 @@ func _on_ChoiceA_input_event(_viewport, _event, _shape_idx):
 	if mouseInChoiceA and Input.is_action_just_pressed("mouse1") and choosing:
 		# do actions associated with choice
 		addKarma(options[choicesCounter][2])
-		print("chose A")
 		choiceAActions(choicesCounter)
 		
 		# flush all choice logic
@@ -114,7 +110,6 @@ func _on_ChoiceB_input_event(_viewport, _event, _shape_idx):
 	if mouseInChoiceB and Input.is_action_just_pressed("mouse1") and choosing:
 		# do actions associated with choice
 		addKarma(options[choicesCounter][3])
-		print("chose B")
 		choiceBActions(choicesCounter)
 		
 		# flush all choice logic
@@ -123,24 +118,26 @@ func _on_ChoiceB_input_event(_viewport, _event, _shape_idx):
 func resetChoicesLogic():
 	if choicesCounter < len(options) - 1:
 		choicesCounter += 1
-		$ChoiceA/ChoiceALabel.text = ""
-		$ChoiceB/ChoiceBLabel.text = ""
+		resetChoiceLabels()
 		speak()
 	else:
 		choosing = false
-		$ChoiceA/ChoiceALabel.text = ""
-		$ChoiceB/ChoiceBLabel.text = ""
+		resetChoiceLabels()
 		lastBody.setCanMove(true)
 		speak()
 	
 func addKarma(karma):
 	lastBody.karma += karma
 	
-func choiceAActions(num):
+func choiceAActions(_num):
 	pass
 	
-func choiceBActions(num):
+func choiceBActions(_num):
 	pass
+	
+func resetChoiceLabels():
+	$ChoiceA/ChoiceALabel.text = ""
+	$ChoiceB/ChoiceBLabel.text = ""
 
 func _on_ChoiceB_mouse_entered(): mouseInChoiceB = true
 func _on_ChoiceB_mouse_exited(): mouseInChoiceB = false
