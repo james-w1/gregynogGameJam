@@ -11,7 +11,7 @@ var dict = {
 	5: """of hell from whence you came. Good luck.""",
 	6: "give the kid an icecream?",
 	7: "do u wanna kill the child?",
-	8: ""
+	9: ""
 }
 
 var lastBody
@@ -22,7 +22,10 @@ var mouseInChoiceA = false
 var mouseInChoiceB = false
 # options to choose from
 # [choiceA, choiceB, karmaA, karmaB]
-var options = [["yes", "no", 100, 0], ["kill", "save", -100, 0]]
+var options = [
+	["yes", "no", 100, 0],
+	["kill", "save", -100, 0]
+]
 var choicesCounter = 0
 
 # idle anim
@@ -47,14 +50,15 @@ func _on_NPC_body_exited(body):
 	body.canInteract(false)
 	$AnimatedSprite.play("stand")
 	speakCounter = 0
-	SpeechBubble.text = ""
 	
-	choicesCounter = 0
+	if !choosing:
+		SpeechBubble.text = ""
+		choicesCounter = 0
 
 func speak():
 	SpeechBubble.show()
-	SpeechBubble.text = dict[speakCounter]
 	if speakCounter < maxSpeech:
+		SpeechBubble.text = dict[speakCounter]
 		$AnimatedSprite.play("speak")
 		speakCounter += 1
 		
@@ -70,10 +74,12 @@ func speak():
 # Choices Logic Below
 func choice():
 	choosing = true
+	
 	# setup choices on screen
 	$ChoiceA/ChoiceALabel.text = options[choicesCounter][0]
 	$ChoiceB/ChoiceBLabel.text = options[choicesCounter][1]
 
+	lastBody.setCanMove(false)
 
 func _on_ChoiceA_mouse_entered(): mouseInChoiceA = true
 func _on_ChoiceA_mouse_exited(): mouseInChoiceA = false
@@ -97,10 +103,17 @@ func _on_ChoiceB_input_event(_viewport, _event, _shape_idx):
 		resetChoicesLogic()
 
 func resetChoicesLogic():
-	choosing = false
-	$ChoiceA/ChoiceALabel.text = ""
-	$ChoiceB/ChoiceBLabel.text = ""
-	choicesCounter += 1
+	if choicesCounter < len(options) - 1:
+		choicesCounter += 1
+		$ChoiceA/ChoiceALabel.text = ""
+		$ChoiceB/ChoiceBLabel.text = ""
+		speak()
+	else:
+		choosing = false
+		$ChoiceA/ChoiceALabel.text = ""
+		$ChoiceB/ChoiceBLabel.text = ""
+		lastBody.setCanMove(true)
+		speak()
 	
 func addKarma(karma):
 	lastBody.karma += karma

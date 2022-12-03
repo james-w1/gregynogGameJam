@@ -6,17 +6,19 @@ var camera2d
 var velocity = Vector2()
 var last_direction = Vector2(0, 1)
 var karma = 0.0
+var canMove = true
 
 func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed("right"):
-		velocity.x += 1
-	if Input.is_action_pressed("left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("down"):
-		velocity.y += 1
-	if Input.is_action_pressed("up"):
-		velocity.y -= 1
+	if canMove:
+		velocity = Vector2()
+		if Input.is_action_pressed("right"):
+			velocity.x += 1
+		if Input.is_action_pressed("left"):
+			velocity.x -= 1
+		if Input.is_action_pressed("down"):
+			velocity.y += 1
+		if Input.is_action_pressed("up"):
+			velocity.y -= 1
 
 	velocity = velocity.normalized() * speed
 	
@@ -68,6 +70,8 @@ func canInteract(toggle):
 	else:
 		$InteractionMsg.hide()
 
+func setCanMove(boolean):
+	canMove = boolean
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
