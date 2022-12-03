@@ -11,7 +11,7 @@ func _ready():
 		["yes", "no", 100, 0]
 	]
 	maxSpeech = len(dict) - 1
-	animNames = ["npc1Stand", "npc1Speak"]
+	animNames = ["beggarStand", "beggarSpeak"]
 	questions = [2]
 	$AnimatedSprite.play(animNames[0])
 

@@ -5,8 +5,9 @@ var speakCounter = 0
 var dict = {
 	0: """François Viète, the guy who put letters in maths. You've been selected as a potential candidate for ...""",
 	1: """'less evil prime minister than Rishi Sunak'. The trials ahead will test your dedication to the ...""",
-	2: """people of Britain. Failure means banishment back to the circle of hell from whence you came. Good luck.""",
-	3: ""
+	2: """people of Britain. Failure means banishment back to the circle of hell from whence you came ...""",
+	3: "                           Good luck.",
+	4: ""
 }
 var questions = []
 # options to choose from
