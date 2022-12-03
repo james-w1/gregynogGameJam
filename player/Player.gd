@@ -41,11 +41,11 @@ func animate_gamer(direction: Vector2):
 			"right":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = false
-				$Sprite.flip_h = false
+				$Shadow.flip_h = false
 			"left":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = true
-				$Sprite.flip_h = true
+				$Shadow.flip_h = true
 			"down":
 				$AnimatedSprite.play("down")
 			"up":
@@ -53,15 +53,23 @@ func animate_gamer(direction: Vector2):
 	else: #if not moving
 		$AnimatedSprite.play("default")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	animate_gamer(velocity) # animate the player character
 	velocity = move_and_slide(velocity) # move the player character
 	camera2d = get_node("Camera2D")
 
+# Called by Area2D objects to notify the player if they can interact
+func canInteract(toggle):
+	if toggle:
+		$InteractionMsg.show()
+	else:
+		$InteractionMsg.hide()
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$InteractionMsg.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
