@@ -41,9 +41,11 @@ func animate_gamer(direction: Vector2):
 			"right":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = false
+				$Sprite.flip_h = false
 			"left":
 				$AnimatedSprite.play("down")
 				$AnimatedSprite.flip_h = true
+				$Sprite.flip_h = true
 			"down":
 				$AnimatedSprite.play("down")
 			"up":

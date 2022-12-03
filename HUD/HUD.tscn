@@ -4,7 +4,9 @@
 follow_viewport_enable = true
 
 [node name="Money" type="Label" parent="."]
-margin_right = 208.0
-margin_bottom = 15.0
+margin_left = 11.0
+margin_top = 10.0
+margin_right = 219.0
+margin_bottom = 25.0
 grow_horizontal = 0
-text = "CASH MONEY: £9,999,999,999"
+text = "Cash Money: £730,455,122"
