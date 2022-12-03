@@ -76,9 +76,18 @@ func setCanMove(boolean):
 func removeFiver():
 	$HUD/Money.text = "Cash Money: £730,455,117"
 
+func playMashX(boolean):
+	if boolean:
+		$mashX.show()
+		$mashX.play()
+	else:
+		$mashX.hide()
+		$mashX.stop()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$InteractionMsg.hide()
+	$mashX.hide()
 	$HUD/Karma.text = str(karma)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
