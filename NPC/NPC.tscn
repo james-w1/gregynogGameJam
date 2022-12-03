@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/child with milk/child_with_milk1.png" type="Texture" id=1]
 [ext_resource path="res://NPC/NPC.gd" type="Script" id=2]
 [ext_resource path="res://sprites/child with milk/child_with_milk2.png" type="Texture" id=3]
 [ext_resource path="res://Misc Scenes/Shadow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sprites/sandman/sandman1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/sandman/sandman2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/speech.png" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 18.0278
@@ -12,14 +15,27 @@ radius = 18.0278
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "speak",
+"name": "kidSpeak",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "stand",
+"name": "kidStand",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "npc1Stand",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "npc1Speak",
+"speed": 8.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 13.5, 6.5 )
 
 [sub_resource type="DynamicFontData" id=5]
 hinting = 1
@@ -30,7 +46,7 @@ hinting = 1
 font_path = "res://Comic_Neue/ComicNeue-Bold.ttf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 12
+size = 30
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -40,11 +56,7 @@ fallback/0 = SubResource( 5 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 4 )
 
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 13.5, 6.5 )
-
 [node name="NPC" type="Area2D"]
-z_index = 1
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,18 +66,7 @@ shape = SubResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2.84217e-14, -2.38419e-07 )
 frames = SubResource( 1 )
-animation = "speak"
-
-[node name="Speech" type="RichTextLabel" parent="."]
-margin_left = -90.0
-margin_top = -49.0
-margin_right = 90.0
-margin_bottom = -19.0
-grow_vertical = 2
-theme = SubResource( 3 )
-meta_underlined = false
-tab_size = 3
-scroll_active = false
+animation = "npc1Speak"
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -100,6 +101,25 @@ margin_bottom = 7.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="SpeechBubble" type="Sprite" parent="."]
+position = Vector2( 3.00003, -33 )
+scale = Vector2( 0.212, 0.113636 )
+texture = ExtResource( 7 )
+
+[node name="Speech" type="RichTextLabel" parent="SpeechBubble"]
+anchor_left = 0.062
+anchor_top = 0.133
+anchor_right = 0.893
+anchor_bottom = 0.667
+margin_left = -312.335
+margin_top = -131.912
+margin_right = -312.71
+margin_bottom = -131.888
+theme = SubResource( 3 )
+meta_underlined = false
+tab_size = 3
+scroll_active = false
 
 [connection signal="body_entered" from="." to="." method="_on_NPC_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_NPC_body_exited"]

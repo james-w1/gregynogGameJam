@@ -27,11 +27,18 @@ var options = [
 	["kill", "save", -100, 0]
 ]
 var choicesCounter = 0
+var questions = [7, 8]
+
+onready var SpeechBubble = get_node("SpeechBubble")
+onready var SpeechBubbleText = get_node("SpeechBubble/Speech")
+
+# npcs have 2 frames a standing and a speaking
+var animNames = ["kidStand", "kidSpeak"]
 
 # idle anim
-func _ready(): $AnimatedSprite.play("stand")
-
-onready var SpeechBubble = get_node("Speech")
+func _ready(): 
+	$AnimatedSprite.play(animNames[0])
+	SpeechBubble.hide()
 	
 func _physics_process(_delta):
 	# Speech only proceeds if the player is interacting and is not choosing
@@ -48,28 +55,30 @@ func _on_NPC_body_exited(body):
 	lastBody = body
 	if body.name == "Player": playerInside = false
 	body.canInteract(false)
-	$AnimatedSprite.play("stand")
+	$AnimatedSprite.play(animNames[0])
 	speakCounter = 0
 	
 	if !choosing:
-		SpeechBubble.text = ""
+		SpeechBubble.hide()
+		SpeechBubbleText.text = ""
 		choicesCounter = 0
 
 func speak():
 	SpeechBubble.show()
 	if speakCounter < maxSpeech:
-		SpeechBubble.text = dict[speakCounter]
-		$AnimatedSprite.play("speak")
+		SpeechBubbleText.text = dict[speakCounter]
+		$AnimatedSprite.play(animNames[1])
 		speakCounter += 1
 		
 		# add this here for choices
-		if speakCounter == 7 or speakCounter ==  8:
+		if speakCounter in questions:
 			choice()
 	else:
 		lastBody.canInteract(true) 
-		$AnimatedSprite.play("stand")
+		$AnimatedSprite.play(animNames[1])
 		speakCounter = 0
-		SpeechBubble.text = ""
+		SpeechBubble.hide()
+		SpeechBubbleText.text = ""
 		
 # Choices Logic Below
 func choice():
@@ -89,6 +98,7 @@ func _on_ChoiceA_input_event(_viewport, _event, _shape_idx):
 		# do actions associated with choice
 		addKarma(options[choicesCounter][2])
 		print("chose A")
+		choiceAActions(choicesCounter)
 		
 		# flush all choice logic
 		resetChoicesLogic()
@@ -98,6 +108,7 @@ func _on_ChoiceB_input_event(_viewport, _event, _shape_idx):
 		# do actions associated with choice
 		addKarma(options[choicesCounter][3])
 		print("chose B")
+		choiceBActions(choicesCounter)
 		
 		# flush all choice logic
 		resetChoicesLogic()
@@ -117,6 +128,12 @@ func resetChoicesLogic():
 	
 func addKarma(karma):
 	lastBody.karma += karma
+	
+func choiceAActions(num):
+	pass
+	
+func choiceBActions(num):
+	pass
 
 func _on_ChoiceB_mouse_entered(): mouseInChoiceB = true
 func _on_ChoiceB_mouse_exited(): mouseInChoiceB = false

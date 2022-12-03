@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sandman2.png-1f16f26bb07971985db9d6c050c609a2.stex"
+path="res://.import/light.png-191c2812e8968dabd6c4fd26c78b4e95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sandman/sandman2.png"
-dest_files=[ "res://.import/sandman2.png-1f16f26bb07971985db9d6c050c609a2.stex" ]
+source_file="res://sprites/light.png"
+dest_files=[ "res://.import/light.png-191c2812e8968dabd6c4fd26c78b4e95.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -72,6 +72,9 @@ func canInteract(toggle):
 
 func setCanMove(boolean):
 	canMove = boolean
+	
+func removeFiver():
+	$HUD/Money.text = "Cash Money: £730,455,117"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
