@@ -15,9 +15,10 @@ func _ready():
 	questions = [2]
 	$AnimatedSprite.play(animNames[0])
 
-
 func choiceAActions(num):
 	print("play boris game")
+	var blockage = get_node("../RoadBlock1")
+	blockage.clearBlock()
 	
 func choiceBActions(num):
 	pass

@@ -18,6 +18,8 @@ func _ready():
 
 func choiceAActions(num):
 	print("play cameron game")
+	var blockage = get_node("../RoadBlock2")
+	blockage.clearBlock()
 	
 func choiceBActions(num):
 	pass
