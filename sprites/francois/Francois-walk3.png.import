@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boris_Johnson_official_portrait_(cropped_3).jpg.webp-355d9a8459ecdcf96509939ef557833c.stex"
+path="res://.import/Francois-walk3.png-4c6f0030556884fb26d3a37682a260a4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPC/sprites/Boris_Johnson_official_portrait_(cropped_3).jpg.webp"
-dest_files=[ "res://.import/Boris_Johnson_official_portrait_(cropped_3).jpg.webp-355d9a8459ecdcf96509939ef557833c.stex" ]
+source_file="res://sprites/francois/Francois-walk3.png"
+dest_files=[ "res://.import/Francois-walk3.png-4c6f0030556884fb26d3a37682a260a4.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="HUD" type="CanvasLayer"]
+follow_viewport_enable = true
+
+[node name="Money" type="Label" parent="."]
+margin_right = 208.0
+margin_bottom = 15.0
+grow_horizontal = 0
+text = "CASH MONEY: £9,999,999,999"

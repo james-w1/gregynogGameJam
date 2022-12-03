@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerIconUp.png-fc988204c89a2add9b7263a984f8b8f9.stex"
+path="res://.import/francois-walk-back4.png-dbda5d9bf441a5a0d61b5e4c07f79222.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/icons/playerIconUp.png"
-dest_files=[ "res://.import/playerIconUp.png-fc988204c89a2add9b7263a984f8b8f9.stex" ]
+source_file="res://sprites/francois/francois-walk-back4.png"
+dest_files=[ "res://.import/francois-walk-back4.png-dbda5d9bf441a5a0d61b5e4c07f79222.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

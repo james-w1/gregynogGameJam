@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/playerIcon.png-6ec4414f4c4739d947a3634af6007419.stex"
+path="res://.import/Francois-stand-back1.png-097b7335d69c1bc029f229a358c45135.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/icons/playerIcon.png"
-dest_files=[ "res://.import/playerIcon.png-6ec4414f4c4739d947a3634af6007419.stex" ]
+source_file="res://sprites/francois/Francois-stand-back1.png"
+dest_files=[ "res://.import/Francois-stand-back1.png-097b7335d69c1bc029f229a358c45135.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

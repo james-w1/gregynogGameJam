@@ -22,6 +22,11 @@ settings/fps/force_fps=60
 
 singletons=[  ]
 
+[global]
+
+filter=false
+import=false
+
 [input]
 
 up={
