@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://sprites/child with milk/child_with_milk1.png" type="Texture" id=1]
 [ext_resource path="res://NPC/NPC.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://sprites/speech.png" type="Texture" id=7]
 [ext_resource path="res://Comic_Neue/ComicNeue-Bold.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Comic_Neue/ComicNeue-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://sprites/truss/liz_stand1.png" type="Texture" id=10]
+[ext_resource path="res://sprites/truss/liz_stand2.png" type="Texture" id=11]
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 18.0278
@@ -44,6 +46,16 @@ animations = [ {
 "loop": true,
 "name": "npc1Speak",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "trussStand",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "trussSpeak",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
@@ -78,7 +90,7 @@ shape = SubResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -2.84217e-14, -2.38419e-07 )
 frames = SubResource( 1 )
-animation = "qsSaved"
+animation = "trussSpeak"
 
 [node name="Timer" type="Timer" parent="."]
 
