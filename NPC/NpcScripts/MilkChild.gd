@@ -21,9 +21,26 @@ func choiceAActions(num):
 	
 func choiceBActions(num):
 	print("steal le milk")
-	annoyedText = "m... my milk..."
-	wantsToSpeak = false
+	startQuicktime = true
 
-var quickTime = 3
+var quickTime = 5
+var mashedX = 0
+var startQuicktime = false
 func _process(delta):
-	pass
+	if startQuicktime and quickTime > 0:
+		lastBody.setCanMove(false)
+		if Input.is_action_just_pressed("X"):
+			mashedX += 1
+		quickTime -= delta
+	elif startQuicktime:
+		if mashedX > 20:
+				lastBody.setCanMove(true)
+				annoyedText = "m... my milk..."
+				wantsToSpeak = false
+				print("milk stolen")
+				startQuicktime = false
+		else:
+			lastBody.setCanMove(true)
+			annoyedText = "stay away from my school milk"
+			mashedX = 0
+			startQuicktime = false
