@@ -19,7 +19,7 @@ func _ready(): $AnimatedSprite.play("stand")
 
 onready var SpeechBubble = get_node("Speech")
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	if playerInside and Input.is_action_just_pressed("interact"):
 		lastBody.canInteract(false) 
 		speak()
