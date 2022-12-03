@@ -9,8 +9,9 @@ var dict = {
 	3: """The trials ahead will test your dedication to the ...""",
 	4: """people of Britain. Failure means banishment back to the circle ...""",
 	5: """of hell from whence you came. Good luck.""",
-	6: "do u wanna kill the child?",
-	7: ""
+	6: "give the kid an icecream?",
+	7: "do u wanna kill the child?",
+	8: ""
 }
 
 var lastBody
@@ -21,8 +22,8 @@ var mouseInChoiceA = false
 var mouseInChoiceB = false
 # options to choose from
 # [choiceA, choiceB, karmaA, karmaB]
-var options = [["kill", "save", -100, 0]]
-var chociesCounter = 0
+var options = [["yes", "no", 100, 0], ["kill", "save", -100, 0]]
+var choicesCounter = 0
 
 # idle anim
 func _ready(): $AnimatedSprite.play("stand")
@@ -47,6 +48,8 @@ func _on_NPC_body_exited(body):
 	$AnimatedSprite.play("stand")
 	speakCounter = 0
 	SpeechBubble.text = ""
+	
+	choicesCounter = 0
 
 func speak():
 	SpeechBubble.show()
@@ -54,7 +57,9 @@ func speak():
 	if speakCounter < maxSpeech:
 		$AnimatedSprite.play("speak")
 		speakCounter += 1
-		if speakCounter == 7:
+		
+		# add this here for choices
+		if speakCounter == 7 or speakCounter ==  8:
 			choice()
 	else:
 		lastBody.canInteract(true) 
@@ -66,8 +71,8 @@ func speak():
 func choice():
 	choosing = true
 	# setup choices on screen
-	$ChoiceA/ChoiceALabel.text = options[chociesCounter][0]
-	$ChoiceB/ChoiceBLabel.text = options[chociesCounter][1]
+	$ChoiceA/ChoiceALabel.text = options[choicesCounter][0]
+	$ChoiceB/ChoiceBLabel.text = options[choicesCounter][1]
 
 
 func _on_ChoiceA_mouse_entered(): mouseInChoiceA = true
@@ -76,24 +81,29 @@ func _on_ChoiceA_mouse_exited(): mouseInChoiceA = false
 func _on_ChoiceA_input_event(_viewport, _event, _shape_idx):
 	if mouseInChoiceA and Input.is_action_just_pressed("mouse1") and choosing:
 		# do actions associated with choice
-		lastBody.karma += options[chociesCounter][2]
+		addKarma(options[choicesCounter][2])
 		print("chose A")
 		
 		# flush all choice logic
-		choosing = false
-		$ChoiceA/ChoiceALabel.text = ""
-		$ChoiceB/ChoiceBLabel.text = ""
+		resetChoicesLogic()
 
 func _on_ChoiceB_input_event(_viewport, _event, _shape_idx):
 	if mouseInChoiceB and Input.is_action_just_pressed("mouse1") and choosing:
 		# do actions associated with choice
-		lastBody.karma += options[chociesCounter][3]
+		addKarma(options[choicesCounter][3])
 		print("chose B")
 		
 		# flush all choice logic
-		choosing = false
-		$ChoiceA/ChoiceALabel.text = ""
-		$ChoiceB/ChoiceBLabel.text = ""
+		resetChoicesLogic()
+
+func resetChoicesLogic():
+	choosing = false
+	$ChoiceA/ChoiceALabel.text = ""
+	$ChoiceB/ChoiceBLabel.text = ""
+	choicesCounter += 1
+	
+func addKarma(karma):
+	lastBody.karma += karma
 
 func _on_ChoiceB_mouse_entered(): mouseInChoiceB = true
 func _on_ChoiceB_mouse_exited(): mouseInChoiceB = false
