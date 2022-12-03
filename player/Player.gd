@@ -102,3 +102,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	
+func showSpeech(text):
+	$SpeechBubble.show()
+	$SpeechBubble/Speech.text = text
+	
+func hideSpeech():
+	$SpeechBubble.hide()

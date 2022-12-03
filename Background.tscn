@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map.tscn" type="PackedScene" id=2]
@@ -17,10 +17,32 @@
 [ext_resource path="res://NPC/NpcScripts/Truss.gd" type="Script" id=15]
 [ext_resource path="res://NPC/NpcScripts/ShoppingCart.gd" type="Script" id=16]
 [ext_resource path="res://TrolleyZone.tscn" type="PackedScene" id=17]
-[ext_resource path="res://RoadBlock.tscn" type="PackedScene" id=18]
+[ext_resource path="res://sprites/cone/cone8.png" type="Texture" id=18]
+[ext_resource path="res://sprites/cone/cone7.png" type="Texture" id=19]
+[ext_resource path="res://sprites/cone/cone3.png" type="Texture" id=20]
+[ext_resource path="res://sprites/cone/cone11.png" type="Texture" id=21]
+[ext_resource path="res://sprites/cone/cone1.png" type="Texture" id=22]
+[ext_resource path="res://sprites/cone/cone4.png" type="Texture" id=23]
+[ext_resource path="res://sprites/cone/cone9.png" type="Texture" id=24]
+[ext_resource path="res://sprites/cone/cone5.png" type="Texture" id=25]
+[ext_resource path="res://sprites/cone/cone10.png" type="Texture" id=26]
+[ext_resource path="res://sprites/cone/cone6.png" type="Texture" id=27]
+[ext_resource path="res://sprites/cone/cone2.png" type="Texture" id=28]
+[ext_resource path="res://RoadBlock/RoadBlock1.gd" type="Script" id=29]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.5, 32 )
+extents = Vector2( 15.5, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 32 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 24 ), ExtResource( 26 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Main" type="Node2D"]
 position = Vector2( -33, -36 )
@@ -94,8 +116,34 @@ script = ExtResource( 16 )
 
 [node name="TrolleyZone" parent="." instance=ExtResource( 17 )]
 
-[node name="RoadBlock1" parent="." instance=ExtResource( 18 )]
+[node name="RoadBlock1" type="Area2D" parent="."]
+position = Vector2( -770, 354 )
+script = ExtResource( 29 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoadBlock1"]
-position = Vector2( 9, -1 )
+position = Vector2( -5.50006, -2 )
 shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoadBlock1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoadBlock1/StaticBody2D"]
+position = Vector2( 1.99994, -2 )
+shape = SubResource( 2 )
+
+[node name="cone" type="AnimatedSprite" parent="RoadBlock1/StaticBody2D"]
+position = Vector2( 1.99994, -25 )
+scale = Vector2( 0.833333, 0.833333 )
+frames = SubResource( 3 )
+
+[node name="cone2" type="AnimatedSprite" parent="RoadBlock1/StaticBody2D"]
+position = Vector2( 1.99994, 18 )
+scale = Vector2( 0.833333, 0.833333 )
+frames = SubResource( 3 )
+
+[node name="cone3" type="AnimatedSprite" parent="RoadBlock1/StaticBody2D"]
+position = Vector2( 1.99994, -3 )
+scale = Vector2( 0.833333, 0.833333 )
+frames = SubResource( 3 )
+
+[connection signal="body_entered" from="RoadBlock1" to="RoadBlock1" method="_on_RoadBlock1_body_entered"]
+[connection signal="body_exited" from="RoadBlock1" to="RoadBlock1" method="_on_RoadBlock1_body_exited"]
