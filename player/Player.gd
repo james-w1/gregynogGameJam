@@ -5,6 +5,7 @@ export (int) var speed = 200
 var camera2d
 var velocity = Vector2()
 var last_direction = Vector2(0, 1)
+var karma = 0.0
 
 func get_input():
 	velocity = Vector2()
@@ -57,7 +58,8 @@ func _physics_process(_delta):
 	get_input()
 	animate_gamer(velocity) # animate the player character
 	velocity = move_and_slide(velocity) # move the player character
-	camera2d = get_node("Camera2D")
+	#camera2d = get_node("Camera2D")
+	$HUD/Karma.text = str(karma) # update karma score on hud for debug
 
 # Called by Area2D objects to notify the player if they can interact
 func canInteract(toggle):
@@ -70,6 +72,7 @@ func canInteract(toggle):
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$InteractionMsg.hide()
+	$HUD/Karma.text = str(karma)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
