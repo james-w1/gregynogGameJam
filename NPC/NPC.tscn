@@ -58,7 +58,6 @@ margin_left = -90.0
 margin_top = -47.0
 margin_right = 90.0
 margin_bottom = -17.0
-grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource( 3 )
 meta_underlined = false

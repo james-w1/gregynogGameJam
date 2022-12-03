@@ -3,9 +3,13 @@ extends Area2D
 var playerInside = false
 var speakCounter = 0
 var dict = {
-	0: """OI MATE! UR IN HELL INNIT BRUVNER ...""",
-	1: """U SMELL AND U ADDED NUMBERS TO MAFFS ...""",
-	2: """""",
+	0: """François Viète, the guy who put letters in maths.""",
+	1: """ You've been selected as a potential candidate for ... """,
+	2: """'less evil prime minister than Rishi Sunak'.""",
+	3: """The trials ahead will test your dedication to the ...""",
+	4: """people of Britain. Failure means banishment back to the circle ...""",
+	5: """of hell from whence you came. Good luck.""",
+	6: ""
 }
 
 var maxSpeech = len(dict) - 1
