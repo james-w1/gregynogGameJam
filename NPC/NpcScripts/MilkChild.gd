@@ -20,7 +20,6 @@ func choiceAActions(num):
 	annoyedText = "stay away from my school milk"
 	
 func choiceBActions(num):
-	print("steal le milk")
 	startQuicktime = true
 
 onready var player = get_node("../Player")
@@ -32,11 +31,21 @@ func reparentMilk():
 		player.add_child(milk)
 		milk.set_owner(player)
 		
-func sendMessage():
-	notify.text = "stolen!"
+func showAchievement():
+	notify.show()
+	var tween = get_node("../Player/HUD/Notification/Tween")
+	tween.interpolate_property(notify, "position",
+	Vector2(165, -50), Vector2(165, 50), 1,
+	Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.interpolate_property(notify, "position", 
+	Vector2(165, 50), Vector2(165, -50), 1,
+	Tween.TRANS_LINEAR, Tween.EASE_OUT, 5)
+	tween.start()
+
 
 var quickTime = 5
 var mashedX = 0
+
 var startQuicktime = false
 func _process(delta):
 	if startQuicktime and quickTime > 0:
@@ -56,7 +65,8 @@ func _process(delta):
 				annoyedText = "m... my milk..."
 				wantsToSpeak = false
 				reparentMilk()
-				sendMessage()
+				showAchievement()
+				
 				startQuicktime = false
 		else:
 			lastBody.playMashX(false)
