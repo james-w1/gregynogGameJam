@@ -7,6 +7,7 @@ var velocity = Vector2()
 var last_direction = Vector2(0, 1)
 var karma = 0.0
 var canMove = true
+var hasTrolley
 
 func get_input():
 	if canMove:
@@ -83,6 +84,14 @@ func playMashX(boolean):
 	else:
 		$mashX.hide()
 		$mashX.stop()
+
+func showTrolley(boolean):
+	if boolean:
+		$Trolley.show()
+		hasTrolley = true
+	else:
+		$Trolley.hide()
+		hasTrolley = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

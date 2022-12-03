@@ -39,9 +39,8 @@ func showAchievement():
 	Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.interpolate_property(notify, "position", 
 	Vector2(165, 50), Vector2(165, -50), 1,
-	Tween.TRANS_LINEAR, Tween.EASE_OUT, 5)
+	Tween.TRANS_LINEAR, Tween.EASE_OUT, 7)
 	tween.start()
-
 
 var quickTime = 5
 var mashedX = 0
