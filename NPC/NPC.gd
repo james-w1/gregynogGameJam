@@ -17,6 +17,9 @@ var dict = {
 var lastBody
 var maxSpeech = len(dict) - 1
 
+var wantsToSpeak = true
+var annoyedText = "go away"
+
 var choosing = false
 var mouseInChoiceA = false
 var mouseInChoiceB = false
@@ -64,22 +67,26 @@ func _on_NPC_body_exited(body):
 		choicesCounter = 0
 
 func speak():
-	SpeechBubble.show()
-	if speakCounter < maxSpeech:
-		SpeechBubbleText.text = dict[speakCounter]
-		$AnimatedSprite.play(animNames[1])
-		speakCounter += 1
-		
-		# add this here for choices
-		if speakCounter in questions:
-			choice()
+	if wantsToSpeak:
+		SpeechBubble.show()
+		if speakCounter < maxSpeech:
+			SpeechBubbleText.text = dict[speakCounter]
+			$AnimatedSprite.play(animNames[1])
+			speakCounter += 1
+			
+			# add this here for choices
+			if speakCounter in questions:
+				choice()
+		else:
+			lastBody.canInteract(true) 
+			$AnimatedSprite.play(animNames[1])
+			speakCounter = 0
+			SpeechBubble.hide()
+			SpeechBubbleText.text = ""
 	else:
-		lastBody.canInteract(true) 
-		$AnimatedSprite.play(animNames[1])
-		speakCounter = 0
-		SpeechBubble.hide()
-		SpeechBubbleText.text = ""
-		
+		SpeechBubble.show()
+		SpeechBubbleText.text = annoyedText
+			
 # Choices Logic Below
 func choice():
 	choosing = true

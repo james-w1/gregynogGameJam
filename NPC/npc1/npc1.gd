@@ -19,6 +19,8 @@ func _ready():
 
 func choiceAActions(num):
 	lastBody.removeFiver()
+	wantsToSpeak = false
 	
 func choiceBActions(num):
-	pass
+	annoyedText = "come back when ur a bit nicer"
+	wantsToSpeak = false
