@@ -17,6 +17,7 @@ func _ready():
 
 func choiceAActions(num):
 	print("play boris game")
+	get_tree().change_scene("res://Minigames/BorisGame/BorisGame.tscn")
 	var blockage = get_node("../RoadBlock1")
 	blockage.clearBlock()
 	
