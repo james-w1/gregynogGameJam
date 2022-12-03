@@ -11,5 +11,6 @@ func judgementHall():
 		tileMap.set_cellv(Vector2(-36,i), -1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+var tick = 0
+func _process(delta):
+	tick += delta
