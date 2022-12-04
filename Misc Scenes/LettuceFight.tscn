@@ -1,0 +1,213 @@
+[gd_scene load_steps=148 format=2]
+
+[ext_resource path="res://sprites/black.png" type="Texture" id=1]
+[ext_resource path="res://sprites/lettuce/lettuce_combat.png" type="Texture" id=2]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near16.png" type="Texture" id=3]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near9.png" type="Texture" id=4]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near18.png" type="Texture" id=5]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near11.png" type="Texture" id=6]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near20.png" type="Texture" id=7]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near5.png" type="Texture" id=8]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near13.png" type="Texture" id=9]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near15.png" type="Texture" id=10]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near12.png" type="Texture" id=11]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near2.png" type="Texture" id=12]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near4.png" type="Texture" id=13]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near17.png" type="Texture" id=14]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near3.png" type="Texture" id=15]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near8.png" type="Texture" id=16]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near14.png" type="Texture" id=18]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near19.png" type="Texture" id=19]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near10.png" type="Texture" id=20]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near6.png" type="Texture" id=21]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near7.png" type="Texture" id=22]
+[ext_resource path="res://sprites/lettuce_draws_near/lettuce_draws_near21.png" type="Texture" id=23]
+[ext_resource path="res://Minigames/LettuceFight/LettuceFight.gd" type="Script" id=24]
+[ext_resource path="res://sprites/attack timer/attack_timer44.png" type="Texture" id=25]
+[ext_resource path="res://sprites/attack timer/attack_timer45.png" type="Texture" id=26]
+[ext_resource path="res://sprites/attack timer/attack_timer39.png" type="Texture" id=27]
+[ext_resource path="res://sprites/attack timer/attack_timer32.png" type="Texture" id=28]
+[ext_resource path="res://sprites/attack timer/attack_timer19.png" type="Texture" id=29]
+[ext_resource path="res://sprites/attack timer/attack_timer46.png" type="Texture" id=30]
+[ext_resource path="res://sprites/attack timer/attack_timer55.png" type="Texture" id=31]
+[ext_resource path="res://sprites/attack timer/attack_timer29.png" type="Texture" id=32]
+[ext_resource path="res://sprites/attack timer/attack_timer9.png" type="Texture" id=33]
+[ext_resource path="res://sprites/attack timer/attack_timer26.png" type="Texture" id=34]
+[ext_resource path="res://sprites/attack timer/attack_timer59.png" type="Texture" id=35]
+[ext_resource path="res://sprites/attack timer/attack_timer38.png" type="Texture" id=36]
+[ext_resource path="res://sprites/attack timer/attack_timer63.png" type="Texture" id=37]
+[ext_resource path="res://sprites/attack timer/attack_timer62.png" type="Texture" id=38]
+[ext_resource path="res://sprites/attack timer/attack_timer3.png" type="Texture" id=39]
+[ext_resource path="res://sprites/attack timer/attack_timer41.png" type="Texture" id=40]
+[ext_resource path="res://sprites/attack timer/attack_timer22.png" type="Texture" id=41]
+[ext_resource path="res://sprites/attack timer/attack_timer64.png" type="Texture" id=42]
+[ext_resource path="res://sprites/attack timer/attack_timer69.png" type="Texture" id=43]
+[ext_resource path="res://sprites/attack timer/attack_timer71.png" type="Texture" id=44]
+[ext_resource path="res://sprites/attack timer/attack_timer56.png" type="Texture" id=45]
+[ext_resource path="res://sprites/attack timer/attack_timer12.png" type="Texture" id=46]
+[ext_resource path="res://sprites/attack timer/attack_timer54.png" type="Texture" id=47]
+[ext_resource path="res://sprites/attack timer/attack_timer42.png" type="Texture" id=48]
+[ext_resource path="res://sprites/attack timer/attack_timer4.png" type="Texture" id=49]
+[ext_resource path="res://sprites/attack timer/attack_timer58.png" type="Texture" id=50]
+[ext_resource path="res://sprites/attack timer/attack_timer61.png" type="Texture" id=51]
+[ext_resource path="res://sprites/attack timer/attack_timer1.png" type="Texture" id=52]
+[ext_resource path="res://sprites/attack timer/attack_timer24.png" type="Texture" id=53]
+[ext_resource path="res://sprites/attack timer/attack_timer60.png" type="Texture" id=54]
+[ext_resource path="res://sprites/attack timer/attack_timer2.png" type="Texture" id=55]
+[ext_resource path="res://sprites/attack timer/attack_timer17.png" type="Texture" id=56]
+[ext_resource path="res://sprites/attack timer/attack_timer68.png" type="Texture" id=57]
+[ext_resource path="res://sprites/attack timer/attack_timer31.png" type="Texture" id=58]
+[ext_resource path="res://sprites/attack timer/attack_timer5.png" type="Texture" id=59]
+[ext_resource path="res://sprites/attack timer/attack_timer14.png" type="Texture" id=60]
+[ext_resource path="res://sprites/attack timer/attack_timer23.png" type="Texture" id=61]
+[ext_resource path="res://sprites/attack timer/attack_timer8.png" type="Texture" id=62]
+[ext_resource path="res://sprites/attack timer/attack_timer50.png" type="Texture" id=63]
+[ext_resource path="res://sprites/attack timer/attack_timer47.png" type="Texture" id=64]
+[ext_resource path="res://sprites/attack timer/attack_timer43.png" type="Texture" id=65]
+[ext_resource path="res://sprites/attack timer/attack_timer49.png" type="Texture" id=66]
+[ext_resource path="res://sprites/attack timer/attack_timer27.png" type="Texture" id=67]
+[ext_resource path="res://sprites/attack timer/attack_timer21.png" type="Texture" id=68]
+[ext_resource path="res://sprites/attack timer/attack_timer6.png" type="Texture" id=69]
+[ext_resource path="res://sprites/attack timer/attack_timer34.png" type="Texture" id=70]
+[ext_resource path="res://sprites/attack timer/attack_timer33.png" type="Texture" id=71]
+[ext_resource path="res://sprites/attack timer/attack_timer65.png" type="Texture" id=72]
+[ext_resource path="res://sprites/attack timer/attack_timer18.png" type="Texture" id=73]
+[ext_resource path="res://sprites/attack timer/attack_timer16.png" type="Texture" id=74]
+[ext_resource path="res://sprites/attack timer/attack_timer36.png" type="Texture" id=75]
+[ext_resource path="res://sprites/attack timer/attack_timer53.png" type="Texture" id=76]
+[ext_resource path="res://sprites/attack timer/attack_timer52.png" type="Texture" id=77]
+[ext_resource path="res://sprites/attack timer/attack_timer28.png" type="Texture" id=78]
+[ext_resource path="res://sprites/attack timer/attack_timer7.png" type="Texture" id=79]
+[ext_resource path="res://sprites/attack timer/attack_timer67.png" type="Texture" id=80]
+[ext_resource path="res://sprites/attack timer/attack_timer51.png" type="Texture" id=81]
+[ext_resource path="res://sprites/attack timer/attack_timer20.png" type="Texture" id=82]
+[ext_resource path="res://sprites/attack timer/attack_timer15.png" type="Texture" id=83]
+[ext_resource path="res://sprites/attack timer/attack_timer57.png" type="Texture" id=84]
+[ext_resource path="res://sprites/attack timer/attack_timer11.png" type="Texture" id=85]
+[ext_resource path="res://sprites/attack timer/attack_timer25.png" type="Texture" id=86]
+[ext_resource path="res://sprites/attack timer/attack_timer40.png" type="Texture" id=87]
+[ext_resource path="res://sprites/attack timer/attack_timer13.png" type="Texture" id=88]
+[ext_resource path="res://sprites/attack timer/attack_timer66.png" type="Texture" id=89]
+[ext_resource path="res://sprites/attack timer/attack_timer35.png" type="Texture" id=90]
+[ext_resource path="res://sprites/attack timer/attack_timer30.png" type="Texture" id=91]
+[ext_resource path="res://sprites/attack timer/attack_timer70.png" type="Texture" id=92]
+[ext_resource path="res://sprites/attack timer/attack_timer37.png" type="Texture" id=93]
+[ext_resource path="res://sprites/attack timer/attack_timer48.png" type="Texture" id=94]
+[ext_resource path="res://sprites/attack timer/attack_timer10.png" type="Texture" id=95]
+[ext_resource path="res://sprites/hit animation/hit_animation1.png" type="Texture" id=96]
+[ext_resource path="res://sprites/hit animation/hit_animation8.png" type="Texture" id=97]
+[ext_resource path="res://sprites/hit animation/hit_animation7.png" type="Texture" id=98]
+[ext_resource path="res://sprites/hit animation/hit_animation4.png" type="Texture" id=99]
+[ext_resource path="res://sprites/hit animation/hit_animation2.png" type="Texture" id=100]
+[ext_resource path="res://sprites/hit animation/hit_animation9.png" type="Texture" id=101]
+[ext_resource path="res://sprites/hit animation/hit_animation6.png" type="Texture" id=102]
+[ext_resource path="res://sprites/hit animation/hit_animation5.png" type="Texture" id=103]
+[ext_resource path="res://sprites/hit animation/hit_animation3.png" type="Texture" id=104]
+[ext_resource path="res://sprites/lettucehp/lettucehp13.png" type="Texture" id=105]
+[ext_resource path="res://sprites/lettucehp/lettucehp20.png" type="Texture" id=106]
+[ext_resource path="res://sprites/lettucehp/lettucehp2.png" type="Texture" id=107]
+[ext_resource path="res://sprites/lettucehp/lettucehp5.png" type="Texture" id=108]
+[ext_resource path="res://sprites/lettucehp/lettucehp36.png" type="Texture" id=109]
+[ext_resource path="res://sprites/lettucehp/lettucehp12.png" type="Texture" id=110]
+[ext_resource path="res://sprites/lettucehp/lettucehp10.png" type="Texture" id=111]
+[ext_resource path="res://sprites/lettucehp/lettucehp14.png" type="Texture" id=112]
+[ext_resource path="res://sprites/lettucehp/lettucehp40.png" type="Texture" id=113]
+[ext_resource path="res://sprites/lettucehp/lettucehp38.png" type="Texture" id=114]
+[ext_resource path="res://sprites/lettucehp/lettucehp6.png" type="Texture" id=115]
+[ext_resource path="res://sprites/lettucehp/lettucehp33.png" type="Texture" id=116]
+[ext_resource path="res://sprites/lettucehp/lettucehp15.png" type="Texture" id=117]
+[ext_resource path="res://sprites/lettucehp/lettucehp35.png" type="Texture" id=118]
+[ext_resource path="res://sprites/lettucehp/lettucehp29.png" type="Texture" id=119]
+[ext_resource path="res://sprites/lettucehp/lettucehp1.png" type="Texture" id=120]
+[ext_resource path="res://sprites/lettucehp/lettucehp23.png" type="Texture" id=121]
+[ext_resource path="res://sprites/lettucehp/lettucehp27.png" type="Texture" id=122]
+[ext_resource path="res://sprites/lettucehp/lettucehp18.png" type="Texture" id=123]
+[ext_resource path="res://sprites/lettucehp/lettucehp39.png" type="Texture" id=124]
+[ext_resource path="res://sprites/lettucehp/lettucehp17.png" type="Texture" id=125]
+[ext_resource path="res://sprites/lettucehp/lettucehp37.png" type="Texture" id=126]
+[ext_resource path="res://sprites/lettucehp/lettucehp32.png" type="Texture" id=127]
+[ext_resource path="res://sprites/lettucehp/lettucehp31.png" type="Texture" id=128]
+[ext_resource path="res://sprites/lettucehp/lettucehp3.png" type="Texture" id=129]
+[ext_resource path="res://sprites/lettucehp/lettucehp9.png" type="Texture" id=130]
+[ext_resource path="res://sprites/lettucehp/lettucehp28.png" type="Texture" id=131]
+[ext_resource path="res://sprites/lettucehp/lettucehp7.png" type="Texture" id=132]
+[ext_resource path="res://sprites/lettucehp/lettucehp24.png" type="Texture" id=133]
+[ext_resource path="res://sprites/lettucehp/lettucehp4.png" type="Texture" id=134]
+[ext_resource path="res://sprites/lettucehp/lettucehp21.png" type="Texture" id=135]
+[ext_resource path="res://sprites/lettucehp/lettucehp30.png" type="Texture" id=136]
+[ext_resource path="res://sprites/lettucehp/lettucehp11.png" type="Texture" id=137]
+[ext_resource path="res://sprites/lettucehp/lettucehp25.png" type="Texture" id=138]
+[ext_resource path="res://sprites/lettucehp/lettucehp22.png" type="Texture" id=139]
+[ext_resource path="res://sprites/lettucehp/lettucehp8.png" type="Texture" id=140]
+[ext_resource path="res://sprites/lettucehp/lettucehp16.png" type="Texture" id=141]
+[ext_resource path="res://sprites/lettucehp/lettucehp19.png" type="Texture" id=142]
+[ext_resource path="res://sprites/lettucehp/lettucehp26.png" type="Texture" id=143]
+[ext_resource path="res://sprites/lettucehp/lettucehp34.png" type="Texture" id=144]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 16 ), ExtResource( 4 ), ExtResource( 20 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 18 ), ExtResource( 10 ), ExtResource( 3 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 7 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "intro",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 55 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 59 ), ExtResource( 69 ), ExtResource( 79 ), ExtResource( 62 ), ExtResource( 33 ), ExtResource( 95 ), ExtResource( 85 ), ExtResource( 46 ), ExtResource( 88 ), ExtResource( 60 ), ExtResource( 83 ), ExtResource( 74 ), ExtResource( 56 ), ExtResource( 73 ), ExtResource( 29 ), ExtResource( 82 ), ExtResource( 68 ), ExtResource( 41 ), ExtResource( 61 ), ExtResource( 53 ), ExtResource( 86 ), ExtResource( 34 ), ExtResource( 67 ), ExtResource( 78 ), ExtResource( 32 ), ExtResource( 91 ), ExtResource( 58 ), ExtResource( 28 ), ExtResource( 71 ), ExtResource( 70 ), ExtResource( 90 ), ExtResource( 75 ), ExtResource( 93 ), ExtResource( 36 ), ExtResource( 27 ), ExtResource( 87 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 65 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 64 ), ExtResource( 94 ), ExtResource( 66 ), ExtResource( 63 ), ExtResource( 81 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 47 ), ExtResource( 31 ), ExtResource( 45 ), ExtResource( 84 ), ExtResource( 50 ), ExtResource( 35 ), ExtResource( 54 ), ExtResource( 51 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 42 ), ExtResource( 72 ), ExtResource( 89 ), ExtResource( 80 ), ExtResource( 57 ), ExtResource( 43 ), ExtResource( 92 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "attack",
+"speed": 40.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 96 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 99 ), ExtResource( 103 ), ExtResource( 102 ), ExtResource( 98 ), ExtResource( 97 ), ExtResource( 101 ) ],
+"loop": false,
+"name": "default",
+"speed": 20.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 120 ), ExtResource( 107 ), ExtResource( 129 ), ExtResource( 134 ), ExtResource( 108 ), ExtResource( 115 ), ExtResource( 132 ), ExtResource( 140 ), ExtResource( 130 ), ExtResource( 111 ), ExtResource( 137 ), ExtResource( 110 ), ExtResource( 105 ), ExtResource( 112 ), ExtResource( 117 ), ExtResource( 141 ), ExtResource( 125 ), ExtResource( 123 ), ExtResource( 142 ), ExtResource( 106 ), ExtResource( 135 ), ExtResource( 139 ), ExtResource( 121 ), ExtResource( 133 ), ExtResource( 138 ), ExtResource( 143 ), ExtResource( 122 ), ExtResource( 131 ), ExtResource( 119 ), ExtResource( 136 ), ExtResource( 128 ), ExtResource( 127 ), ExtResource( 116 ), ExtResource( 144 ), ExtResource( 118 ), ExtResource( 109 ), ExtResource( 126 ), ExtResource( 114 ), ExtResource( 124 ), ExtResource( 113 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[node name="LettuceFight" type="Node2D"]
+position = Vector2( 963, 540 )
+script = ExtResource( 24 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( -3, 0 )
+z_index = -1
+texture = ExtResource( 1 )
+
+[node name="Lettuce" type="Sprite" parent="."]
+position = Vector2( -3, -185 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 2 )
+
+[node name="DrawsNear" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 158 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 1 )
+animation = "attack"
+
+[node name="HitAnim" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -3, -190 )
+scale = Vector2( 16, 16 )
+z_index = 1
+frames = SubResource( 2 )
+
+[node name="HPBar" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, -407 )
+scale = Vector2( 8, 8 )
+frames = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="DrawsNear" to="." method="_on_DrawsNear_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

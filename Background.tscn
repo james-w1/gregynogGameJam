@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map.tscn" type="PackedScene" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://NPC/NpcScripts/PigScript2.gd" type="Script" id=28]
 [ext_resource path="res://sprites/shadow.png" type="Texture" id=29]
 [ext_resource path="res://sprites/lettuce/lettuce_world.png" type="Texture" id=30]
+[ext_resource path="res://Misc Scenes/LettuceFight.tscn" type="PackedScene" id=31]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floor.png 0"
@@ -233,5 +234,10 @@ position = Vector2( 1.33333, 4 )
 scale = Vector2( 1.98148, 1 )
 z_index = -1
 texture = ExtResource( 29 )
+
+[node name="LettuceFight" parent="." instance=ExtResource( 31 )]
+visible = false
+position = Vector2( -180, 954 )
+z_index = 4
 
 [connection signal="body_entered" from="PigZone" to="Player" method="_on_PigZone_body_entered"]
