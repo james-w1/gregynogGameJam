@@ -18,7 +18,6 @@ func _on_ChildDestroyer_body_entered(body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$ParallaxBackground.scroll_offset.x -= 250 * delta
 	if score <= 0:
 		goBack()
 	else:
@@ -33,7 +32,6 @@ func goBack():
 	var boris = get_node("../Boris")
 	var game = get_node("../BorisGame")
 	var gamer = get_node("../BorisGame/PlayBoris")
-	var bg = get_node("../BorisGame/ParallaxBackground/ParallaxLayer")
 	var playerC = get_node("../Player/CollisionShape2D")
 	
 	# hide everything
@@ -48,7 +46,6 @@ func goBack():
 	playerCam.zoom.y = 0.3
 	
 	gamer.changeMovementLock(true)
-	bg.hide()
 
 func _on_SpawnTimer_timeout():
 	if score > 0:
@@ -75,11 +72,10 @@ func _on_SpawnTimer_timeout():
 
 func _on_PlayBoris_body_entered(body):
 	if "Child" in body.name:
-		print('test2')
 		body.queue_free()
 		score -= 1
 		$Score.text = str(score)
 
 
 func _on_PlayBoris_body_exited(body):
-	print('test')
+	pass

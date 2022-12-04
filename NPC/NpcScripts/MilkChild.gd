@@ -15,6 +15,7 @@ func _ready():
 	questions = [2]
 	$AnimatedSprite.play(animNames[0])
 	$AnimatedSprite.flip_h = false
+	$Shadow.hide()
 
 func choiceAActions(num):
 	startQuicktime = true

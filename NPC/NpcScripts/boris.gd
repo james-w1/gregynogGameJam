@@ -25,7 +25,6 @@ func choiceAActions(num):
 	var playerCam = get_node("../Player/Camera2D")
 	var game = get_node("../BorisGame")
 	var gamer = get_node("../BorisGame/PlayBoris")
-	var bg = get_node("../BorisGame/ParallaxBackground/ParallaxLayer")
 	
 	# hide everything
 	self.hide()
@@ -35,7 +34,6 @@ func choiceAActions(num):
 	playerC.disabled = true
 	
 	gamer.changeMovementLock(false)
-	bg.show()
 	
 	game.start()
 	
