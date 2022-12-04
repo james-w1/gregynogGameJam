@@ -257,14 +257,12 @@ shape = SubResource( 2 )
 visible = false
 position = Vector2( 47.4659, -56.0657 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="pig2" type="AnimatedSprite" parent="PigZone"]
 visible = false
 position = Vector2( 84.4659, -9.06573 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -272,12 +270,14 @@ flip_h = true
 visible = false
 position = Vector2( 94.4659, 43.9343 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="pig4" type="AnimatedSprite" parent="PigZone"]
 visible = false
 position = Vector2( 164.466, -44.0657 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -285,6 +285,7 @@ flip_h = true
 visible = false
 position = Vector2( 137.466, 60.9343 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 flip_h = true
 

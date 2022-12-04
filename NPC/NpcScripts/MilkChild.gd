@@ -78,6 +78,6 @@ func _process(delta):
 			lastBody.setCanMove(true)
 			lastBody.canInteract(true)
 			wantsToSpeak = true
-			annoyedText = "Stay away from my school milk !"
+			annoyedText = "Stay away from my school milk!"
 			mashedX = 0
 			startQuicktime = false
