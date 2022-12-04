@@ -20,6 +20,7 @@ func _ready():
 
 func choiceAActions(num):
 	print("play cameron game")
+	playerForDeeds.addDeed("You rounded up David Cameron's pigs. I'm sure he and the Piers Gaveston Society will be grateful. ...")
 	
 func choiceBActions(num):
 	pass

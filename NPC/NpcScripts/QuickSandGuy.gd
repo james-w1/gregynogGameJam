@@ -21,10 +21,14 @@ func choiceAActions(_num):
 	rescueAnim = true
 	annoyedText = "thank you so much, I cant wait to see my kids again"
 	wantsToSpeak = false
+	playerForDeeds.addDeed("You helped Jimmothy out of the quicksand. He would've died otherwise. ...")
+	playerForDeeds.addDeed("He didn't pay attention to nature programs that explain how to get out. ...")
 	
 func choiceBActions(_num):
 	annoyedText = "WHAT?! YOU MONSTER! I HAVE A FAMILY!"
 	wantsToSpeak = false
+	playerForDeeds.addDeed("You refused to help Jimmothy out of the quicksand. ...")
+	playerForDeeds.addDeed("He's going to be stuck there until the end of time. ...")
 
 var upTime = 1
 var downTime = 1

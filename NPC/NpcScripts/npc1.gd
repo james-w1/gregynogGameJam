@@ -23,7 +23,10 @@ func choiceAActions(_num):
 	annoyedText = "Cheers mate."
 	lastBody.removeFiver()
 	wantsToSpeak = false
-	
+	playerForDeeds.addDeed("You gave money to the rude beggar. You would be unable to buy a third private ...")
+	playerForDeeds.addDeed("jet, as all rich people have, but you helped him despite this. ...")
+
 func choiceBActions(_num):
 	annoyedText = "Should've expected that from the likes of you."
 	wantsToSpeak = false
+	playerForDeeds.addDeed("You refused to give money to the beggar. Your selfishness is unparalleled. ...")

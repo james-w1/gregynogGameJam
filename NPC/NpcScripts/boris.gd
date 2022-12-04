@@ -48,5 +48,7 @@ func choiceAActions(num):
 	annoyedText = "Wow that really hit the spot, Cheers!"
 	wantsToSpeak = false
 	
+	playerForDeeds.addDeed("You helped Boris bowl over those kids. They deserved it really. ...")
+	
 func choiceBActions(num):
 	pass

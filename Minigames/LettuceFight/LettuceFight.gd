@@ -41,6 +41,7 @@ func _on_FinishedTimer_timeout():
 	var playerCam = get_node("../Player/Camera2D")
 	var game = get_node("/root/Main/LettuceFight")
 	var truss = get_node("../Truss")
+	var wL = get_node("../WorldLettuce/AnimatedSprite")
 	
 	# immobalise player
 	player.setPlayingGame(false)
@@ -53,10 +54,14 @@ func _on_FinishedTimer_timeout():
 	playerCam.zoom.x = 0.3
 	playerCam.zoom.y = 0.3
 	
-	truss.annoyedText = "Thank you for slaying that evil lettuce"
+	wL.play("dead")
+	
+	truss.annoyedText = "Thank you for helping me outlast that evil lettuce"
 	truss.wantsToSpeak = false
 	
 	var tileMap = get_node("/root/Main/TileMap")
 	for i in range(17,27):
 		tileMap.set_cellv(Vector2(-37,i), -1)
 		tileMap.set_cellv(Vector2(-36,i), -1)
+		
+	

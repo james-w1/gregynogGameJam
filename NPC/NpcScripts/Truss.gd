@@ -59,5 +59,7 @@ func choiceAActions(num):
 	playerCam.zoom.x = 1
 	playerCam.zoom.y = 1
 	
+	playerForDeeds.addDeed("You went toe to toe with death alongside Liz Truss as she faced down her mortal enemy. ...")
+	
 func choiceBActions(num):
 	pass

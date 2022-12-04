@@ -11,6 +11,8 @@ var playingGame = false
 var hasTrolley
 var hasPig = false
 
+var deeds = []
+
 func get_input():
 	if canMove:
 		velocity = Vector2()
@@ -22,6 +24,9 @@ func get_input():
 			velocity.y += 1
 		if Input.is_action_pressed("up"):
 			velocity.y -= 1
+	else:
+		velocity.x = 0
+		velocity.y = 0
 
 	velocity = velocity.normalized() * speed
 	
@@ -65,7 +70,7 @@ func _physics_process(_delta):
 	if !playingGame:
 		velocity = move_and_slide(velocity) # move the player character
 	#camera2d = get_node("Camera2D")
-	$HUD/Karma.text = str(karma) # update karma score on hud for debug
+	#$HUD/Karma.text = str(karma) # update karma score on hud for debug
 
 # Called by Area2D objects to notify the player if they can interact
 func canInteract(toggle):
@@ -103,7 +108,7 @@ func showTrolley(boolean):
 func _ready():
 	$InteractionMsg.hide()
 	$mashX.hide()
-	$HUD/Karma.text = str(karma)
+	#$HUD/Karma.text = str(karma)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -127,3 +132,7 @@ func _on_PigZone_body_entered(body):
 		$HeadPig.hide()
 		$"/root/Main/PigZone".addPig()
 		hasPig = false
+
+func addDeed(string):
+	deeds.append(string)
+	print(deeds)

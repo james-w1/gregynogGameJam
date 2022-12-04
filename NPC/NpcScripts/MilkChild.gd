@@ -69,6 +69,7 @@ func _process(delta):
 				showAchievement()
 				
 				startQuicktime = false
+				playerForDeeds.addDeed("You snatched milk from a school child. You remind me of my boss. ...")
 		else:
 			lastBody.playMashX(false)
 			lastBody.setCanMove(true)
@@ -77,3 +78,6 @@ func _process(delta):
 			annoyedText = "Stay away from my school milk !"
 			mashedX = 0
 			startQuicktime = false
+			playerForDeeds.addDeed("You let that kid keep his milk. ...")
+			playerForDeeds.addDeed("...........")
+			playerForDeeds.addDeed("What? Did you want a medal? ...")

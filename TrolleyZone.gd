@@ -13,3 +13,6 @@ func _on_TrolleyZone_body_entered(body):
 		var player = get_node("../Player")
 		player.showTrolley(false)
 		player.karma += 200
+		player.addDeed("You put back the lonely shopping trolley. The noblest of deeds - a true litmus test of one's character. ...")
+		var satan = get_node("../Satan")
+		satan.returnedCart = true

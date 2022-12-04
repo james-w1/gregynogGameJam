@@ -27,6 +27,7 @@ var choicesCounter = 0
 
 onready var SpeechBubble = get_node("SpeechBubble")
 onready var SpeechBubbleText = get_node("SpeechBubble/Speech")
+onready var playerForDeeds = get_node("/root/Main/Player")
 
 # npcs have 2 frames a standing and a speaking
 var animNames = ["npc1Stand", "npc1Speak"]
