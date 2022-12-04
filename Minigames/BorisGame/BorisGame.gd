@@ -3,6 +3,7 @@ extends Node2D
 export(PackedScene) var child
 var score = 20
 var started = false
+var calledGoBack = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,8 @@ func _on_ChildDestroyer_body_entered(body):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if score <= 0:
+	if score <= 0 and !calledGoBack:
+		calledGoBack = true
 		goBack()
 	else:
 		pass

@@ -29,7 +29,6 @@ func choiceAActions(num):
 	# hide everything
 	self.hide()
 	player.setPlayingGame(true)
-	player.canInteract(false)
 	player.hide()
 	playerC.disabled = true
 	

@@ -44,7 +44,20 @@ func _ready():
 
 
 func choiceAActions(num):
-	print("play truss game")
+	var player = get_node("../Player")
+	var playerCam = get_node("../Player/Camera2D")
+	var game = get_node("/root/Main/LettuceFight")
+	
+	# immobalise player
+	player.setPlayingGame(true)
+	player.hide()
+	
+	# play the game
+	game.show()
+	game.playing = true
+	
+	playerCam.zoom.x = 1
+	playerCam.zoom.y = 1
 	
 func choiceBActions(num):
 	pass
