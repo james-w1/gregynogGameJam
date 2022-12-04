@@ -25,7 +25,3 @@ func _process(delta):
 func changeMovementLock(boolean):
 	movementLock = boolean
 
-func _on_Boris_body_entered(body):
-	emit_signal("hit")
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$BorisCollision.set_deferred("disabled", true)

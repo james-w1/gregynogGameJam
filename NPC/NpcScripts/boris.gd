@@ -34,6 +34,8 @@ func choiceAActions(num):
 	gamer.changeMovementLock(false)
 	bg.show()
 	
+	game.start()
+	
 	#zoom out
 	playerCam.zoom.x = 0.7
 	playerCam.zoom.y = 0.7
@@ -42,6 +44,9 @@ func choiceAActions(num):
 	
 	var blockage = get_node("../RoadBlock1")
 	blockage.clearBlock()
+	
+	annoyedText = "Wow that really hit the spot, Cheers!"
+	wantsToSpeak = false
 	
 func choiceBActions(num):
 	pass

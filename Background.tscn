@@ -122,5 +122,5 @@ script = ExtResource( 16 )
 position = Vector2( -824, 578 )
 
 [node name="BorisGame" parent="." instance=ExtResource( 19 )]
+visible = false
 position = Vector2( -1792, -1063 )
-z_index = 2

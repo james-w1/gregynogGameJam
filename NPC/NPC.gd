@@ -48,15 +48,17 @@ func _physics_process(_delta):
 
 func _on_NPC_body_entered(body):
 	lastBody = body
-	if body.name == "Player": playerInside = true
-	body.canInteract(true)
+	if body.name == "Player": 
+		playerInside = true
+		body.canInteract(true)
 
 func _on_NPC_body_exited(body):
 	lastBody = body
-	if body.name == "Player": playerInside = false
-	body.canInteract(false)
-	$AnimatedSprite.play(animNames[0])
-	speakCounter = 0
+	if body.name == "Player": 
+		playerInside = false
+		body.canInteract(false)
+		$AnimatedSprite.play(animNames[0])
+		speakCounter = 0
 	
 	if !choosing:
 		SpeechBubble.hide()
