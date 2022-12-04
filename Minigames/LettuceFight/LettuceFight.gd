@@ -54,6 +54,11 @@ func _on_FinishedTimer_timeout():
 	playerCam.zoom.x = 0.3
 	playerCam.zoom.y = 0.3
 	
+	var bgm = get_node("../BackGroundMusic")
+	var minigameBgm = get_node("../MiniGameMusic")
+	bgm.play()
+	minigameBgm.stop()
+	
 	wL.play("dead")
 	
 	truss.annoyedText = "Thank you for helping me outlast that evil lettuce"

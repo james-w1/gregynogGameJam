@@ -56,6 +56,11 @@ func choiceAActions(num):
 	game.show()
 	game.playing = true
 	
+	var bgm = get_node("../BackGroundMusic")
+	var minigameBgm = get_node("../MiniGameMusic")
+	bgm.stop()
+	minigameBgm.play()
+	
 	playerCam.zoom.x = 1
 	playerCam.zoom.y = 1
 	

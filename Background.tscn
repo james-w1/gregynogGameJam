@@ -333,5 +333,6 @@ tile_data = PoolIntArray( 1114099, 0, 0, 1179611, 0, 0, 1179612, 0, 0, 1245147, 
 
 [node name="MiniGameMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -20.0
 
 [connection signal="body_entered" from="PigZone" to="Player" method="_on_PigZone_body_entered"]
