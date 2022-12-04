@@ -20,6 +20,7 @@ func choiceAActions(num):
 	
 	# load all the nodes
 	var player = get_node("../Player")
+	var playerC = get_node("../Player/CollisionShape2D")
 	var playerCam = get_node("../Player/Camera2D")
 	var game = get_node("../BorisGame")
 	var gamer = get_node("../BorisGame/PlayBoris")
@@ -30,6 +31,7 @@ func choiceAActions(num):
 	player.setPlayingGame(true)
 	player.canInteract(false)
 	player.hide()
+	playerC.disabled = true
 	
 	gamer.changeMovementLock(false)
 	bg.show()

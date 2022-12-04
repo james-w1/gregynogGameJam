@@ -34,12 +34,14 @@ func goBack():
 	var game = get_node("../BorisGame")
 	var gamer = get_node("../BorisGame/PlayBoris")
 	var bg = get_node("../BorisGame/ParallaxBackground/ParallaxLayer")
+	var playerC = get_node("../Player/CollisionShape2D")
 	
 	# hide everything
 	self.hide()
 	player.setPlayingGame(false)
 	player.show()
 	boris.show()
+	playerC.disabled = false
 	
 		#zoom in
 	playerCam.zoom.x = 0.3
