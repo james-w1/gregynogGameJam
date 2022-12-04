@@ -8,7 +8,7 @@ func _ready():
 		2: ""
 	}
 	options = [
-		["Snatch milk", "Do not", 0, -100]
+		["Snatch\n milk", "Do not", -100, 0]
 	]
 	maxSpeech = len(dict) - 1
 	animNames = ["kidStand", "kidSpeak"]
