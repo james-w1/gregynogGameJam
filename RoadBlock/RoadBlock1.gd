@@ -14,7 +14,7 @@ func _on_RoadBlock1_body_entered(body):
 		if isBlocked:
 			player.showSpeech("Hmm, this way seems blocked.")
 		elif firstVisit:
-			player.showSpeech("Guess that roadblock cleared up.")
+			player.showSpeech("Guess someone stole those traffic cones.")
 
 func _on_RoadBlock1_body_exited(body):
 	if body.name == "Player":

@@ -44,19 +44,19 @@ shape = SubResource( 2 )
 [node name="cone" type="AnimatedSprite" parent="StaticBody2D"]
 position = Vector2( 1.99994, -25 )
 frames = SubResource( 3 )
-frame = 10
+frame = 7
 playing = true
 
 [node name="cone2" type="AnimatedSprite" parent="StaticBody2D"]
 position = Vector2( 1.99994, 18 )
 frames = SubResource( 3 )
-frame = 8
+frame = 5
 playing = true
 
 [node name="cone3" type="AnimatedSprite" parent="StaticBody2D"]
 position = Vector2( 1.99994, -3 )
 frames = SubResource( 3 )
-frame = 9
+frame = 6
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_RoadBlock1_body_entered"]

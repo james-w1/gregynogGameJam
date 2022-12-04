@@ -9,6 +9,7 @@ var karma = 0.0
 var canMove = true
 var playingGame = false
 var hasTrolley
+var hasPig = false
 
 func get_input():
 	if canMove:
@@ -113,3 +114,16 @@ func showSpeech(text):
 	
 func hideSpeech():
 	$SpeechBubble.hide()
+
+func togglePiggy(boolean):
+	hasPig = boolean
+	if hasPig:
+		$HeadPig.show()
+	else:
+		$HeadPig.hide()
+
+func _on_PigZone_body_entered(body):
+	if hasPig:
+		$HeadPig.hide()
+		$"/root/Main/PigZone".addPig()
+		hasPig = false

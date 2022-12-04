@@ -40,8 +40,8 @@ func choiceAActions(num):
 	game.start()
 	
 	#zoom out
-	playerCam.zoom.x = 0.7
-	playerCam.zoom.y = 0.7
+	playerCam.zoom.x = 0.35
+	playerCam.zoom.y = 0.35
 	
 	game.show()
 	

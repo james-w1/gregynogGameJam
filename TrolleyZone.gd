@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_TrolleyZone_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and body.hasTrolley:
 		hasBeenEntered = true
 		$specialOne.show()
 		var player = get_node("../Player")

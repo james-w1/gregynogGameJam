@@ -18,8 +18,9 @@ func _ready():
 
 
 func reparentTrolley():
-	queue_free()
-	lastBody.showTrolley(true)
+	if !lastBody.hasPig:
+		queue_free()
+		lastBody.showTrolley(true)
 	
 
 func choiceAActions(num):

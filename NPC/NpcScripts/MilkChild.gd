@@ -58,7 +58,7 @@ func _process(delta):
 			mashedX += 1
 		quickTime -= delta
 	elif startQuicktime:
-		if mashedX > 20:
+		if mashedX > 10:
 				lastBody.playMashX(false)
 				lastBody.setCanMove(true)
 				lastBody.canInteract(true)

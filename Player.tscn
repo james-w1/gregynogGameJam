@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/francois/Francois-stand1.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://sprites/shopping_trolley.png" type="Texture" id=18]
 [ext_resource path="res://sprites/speech.png" type="Texture" id=19]
 [ext_resource path="res://Comic_Neue/ComicNeue-Regular.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://sprites/pig/pig_stand2.png" type="Texture" id=21]
+[ext_resource path="res://sprites/pig/pig_stand1.png" type="Texture" id=22]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 13.0384
@@ -59,6 +61,14 @@ font_data = ExtResource( 20 )
 [sub_resource type="Theme" id=12]
 default_font = SubResource( 11 )
 
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 33, 36 )
 script = ExtResource( 1 )
@@ -87,6 +97,7 @@ z_index = -1
 texture = ExtResource( 12 )
 
 [node name="InteractionMsg" type="Sprite" parent="."]
+visible = false
 position = Vector2( 1, -35 )
 z_index = 2
 texture = ExtResource( 13 )
@@ -99,12 +110,13 @@ frames = SubResource( 3 )
 [node name="Trolley" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -16 )
+z_index = 1
 texture = ExtResource( 18 )
 
 [node name="SpeechBubble" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -33 )
-z_index = 1
+z_index = 3
 z_as_relative = false
 texture = ExtResource( 19 )
 
@@ -123,3 +135,10 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 meta_underlined = false
 tab_size = 3
 scroll_active = false
+
+[node name="HeadPig" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1, -16 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
