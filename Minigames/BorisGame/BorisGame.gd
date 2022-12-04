@@ -43,6 +43,11 @@ func goBack():
 	boris.show()
 	playerC.disabled = false
 	
+	var bgm = get_node("../BackGroundMusic")
+	var minigameBgm = get_node("../MiniGameMusic")
+	bgm.play()
+	minigameBgm.stop()
+	
 		#zoom in
 	playerCam.zoom.x = 0.3
 	playerCam.zoom.y = 0.3

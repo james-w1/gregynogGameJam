@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Map.tscn" type="PackedScene" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://NPC/NpcScripts/npc1.gd" type="Script" id=6]
 [ext_resource path="res://NPC/NpcScripts/boris.gd" type="Script" id=7]
-[ext_resource path="res://a_dungeon_ambience_loop-79423.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Medieval_Music_No_Copyright_-_FANTASY__ACTION_Background_Music_EPIC_Battle_Music_NO_COPYRIGHT--Ql_lvstDeg-160k-1656061024087.ogg" type="AudioStream" id=8]
 [ext_resource path="res://NPC/NpcScripts/QuickSandGuy.gd" type="Script" id=9]
 [ext_resource path="res://sprites/quicksand/quicksand_top.png" type="Texture" id=10]
 [ext_resource path="res://sprites/quicksand/quicksand_bottom.png" type="Texture" id=11]
@@ -35,6 +35,7 @@
 [ext_resource path="res://sprites/judgement_tile.png" type="Texture" id=33]
 [ext_resource path="res://sprites/lettuce/lettuce_world_dead.png" type="Texture" id=34]
 [ext_resource path="res://sprites/shopping_trolley.png" type="Texture" id=35]
+[ext_resource path="res://dungeon_ambient_1.ogg" type="AudioStream" id=36]
 
 [sub_resource type="TileSet" id=1]
 0/name = "floor.png 0"
@@ -131,8 +132,9 @@ script = ExtResource( 6 )
 position = Vector2( -1492, -860 )
 script = ExtResource( 7 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 36 )
+volume_db = -20.0
 autoplay = true
 
 [node name="QuickSandGuy" parent="." instance=ExtResource( 4 )]
@@ -256,12 +258,14 @@ shape = SubResource( 2 )
 visible = false
 position = Vector2( 47.4659, -56.0657 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="pig2" type="AnimatedSprite" parent="PigZone"]
 visible = false
 position = Vector2( 84.4659, -9.06573 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 flip_h = true
 
@@ -269,14 +273,12 @@ flip_h = true
 visible = false
 position = Vector2( 94.4659, 43.9343 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="pig4" type="AnimatedSprite" parent="PigZone"]
 visible = false
 position = Vector2( 164.466, -44.0657 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -284,7 +286,6 @@ flip_h = true
 visible = false
 position = Vector2( 137.466, 60.9343 )
 frames = SubResource( 3 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -329,5 +330,8 @@ tile_set = SubResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 1114099, 0, 0, 1179611, 0, 0, 1179612, 0, 0, 1245147, 0, 0, 1245148, 0, 0, 1310683, 0, 0, 1310684, 0, 0, 1376219, 0, 0, 1376220, 0, 0, 1441755, 0, 0, 1441756, 0, 0, 1507291, 0, 0, 1507292, 0, 0, 1572827, 0, 0, 1572828, 0, 0, 1638363, 0, 0, 1638364, 0, 0, 1703899, 0, 0, 1703900, 0, 0, 1769435, 0, 0, 1769436, 0, 0, 1834952, 0, 0, 1834953, 0, 0, 1834954, 0, 0, 1834955, 0, 0, 1834956, 0, 0, 1834957, 0, 0, 1834958, 0, 0, 1834959, 0, 0, 1834960, 0, 0, 1834961, 0, 0, 1834962, 0, 0, 1834963, 0, 0, 1834964, 0, 0, 1834965, 0, 0, 1834966, 0, 0, 1834967, 0, 0, 1834968, 0, 0, 1834969, 0, 0, 1834970, 0, 0, 1834971, 0, 0, 1834972, 0, 0, 1900488, 0, 0, 1900489, 0, 0, 1900490, 0, 0, 1900491, 0, 0, 1900492, 0, 0, 1900493, 0, 0, 1900494, 0, 0, 1900495, 0, 0, 1900496, 0, 0, 1900497, 0, 0, 1900498, 0, 0, 1900499, 0, 0, 1900500, 0, 0, 1900501, 0, 0, 1900502, 0, 0, 1900503, 0, 0, 1900504, 0, 0, 1900505, 0, 0, 1900506, 0, 0, 1900507, 0, 0, 1900508, 0, 0, 1966024, 0, 0, 1966025, 0, 0, 1966026, 0, 0, 1966027, 0, 0, 1966028, 0, 0, 1966029, 0, 0, 1966030, 0, 0, 1966031, 0, 0, 1966032, 0, 0, 1966033, 0, 0, 1966034, 0, 0, 1966035, 0, 0, 1966036, 0, 0, 1966037, 0, 0, 1966038, 0, 0, 1966039, 0, 0, 1966040, 0, 0, 1966041, 0, 0, 1966042, 0, 0, 1966043, 0, 0, 1966044, 0, 0, 2031560, 0, 0, 2031561, 0, 0, 2031562, 0, 0, 2031563, 0, 0, 2031564, 0, 0, 2031565, 0, 0, 2031566, 0, 0, 2031567, 0, 0, 2031568, 0, 0, 2031569, 0, 0, 2031570, 0, 0, 2031571, 0, 0, 2031572, 0, 0, 2031573, 0, 0, 2031574, 0, 0, 2031575, 0, 0, 2031576, 0, 0, 2031577, 0, 0, 2031578, 0, 0, 2031579, 0, 0, 2031580, 0, 0, 2097096, 0, 0, 2097097, 0, 0, 2097098, 0, 0, 2097099, 0, 0, 2097100, 0, 0, 2097101, 0, 0, 2097102, 0, 0, 2097103, 0, 0, 2097104, 0, 0, 2097105, 0, 0, 2097106, 0, 0, 2097107, 0, 0, 2097108, 0, 0, 2097109, 0, 0, 2097110, 0, 0, 2097111, 0, 0, 2097112, 0, 0, 2097113, 0, 0, 2097114, 0, 0, 2097115, 0, 0, 2097116, 0, 0, 2162632, 0, 0, 2162633, 0, 0, 2162634, 0, 0, 2162635, 0, 0, 2162636, 0, 0, 2162637, 0, 0, 2162638, 0, 0, 2162639, 0, 0, 2162640, 0, 0, 2162641, 0, 0, 2162642, 0, 0, 2162643, 0, 0, 2162644, 0, 0, 2162645, 0, 0, 2162646, 0, 0, 2162647, 0, 0, 2162648, 0, 0, 2162649, 0, 0, 2162650, 0, 0, 2162651, 0, 0, 2162652, 0, 0, 2228168, 0, 0, 2228169, 0, 0, 2228170, 0, 0, 2228171, 0, 0, 2228172, 0, 0, 2228173, 0, 0, 2228174, 0, 0, 2228175, 0, 0, 2228176, 0, 0, 2228177, 0, 0, 2228178, 0, 0, 2228179, 0, 0, 2228180, 0, 0, 2228181, 0, 0, 2228182, 0, 0, 2228183, 0, 0, 2228184, 0, 0, 2228185, 0, 0, 2228186, 0, 0, 2228187, 0, 0, 2228188, 0, 0 )
+
+[node name="MiniGameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="body_entered" from="PigZone" to="Player" method="_on_PigZone_body_entered"]

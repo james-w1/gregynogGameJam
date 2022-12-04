@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Medieval_Music_No_Copyright_-_FANTASY__ACTION_Background_Music_EPIC_Battle_Music_NO_COPYRIGHT--Ql_lvstDeg-160k-1656061024087.ogg-5a73ce27c20970f96d66deb9875cbaf3.oggstr"
+
+[deps]
+
+source_file="res://Medieval_Music_No_Copyright_-_FANTASY__ACTION_Background_Music_EPIC_Battle_Music_NO_COPYRIGHT--Ql_lvstDeg-160k-1656061024087.ogg"
+dest_files=[ "res://.import/Medieval_Music_No_Copyright_-_FANTASY__ACTION_Background_Music_EPIC_Battle_Music_NO_COPYRIGHT--Ql_lvstDeg-160k-1656061024087.ogg-5a73ce27c20970f96d66deb9875cbaf3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
