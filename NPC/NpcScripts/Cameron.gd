@@ -15,6 +15,7 @@ func _ready():
 	animNames = ["davidStand", "davidSpeak"]
 	questions = [3]
 	$AnimatedSprite.play(animNames[0])
+	$AnimatedSprite.flip_h = false
 
 
 func choiceAActions(num):

@@ -6,16 +6,12 @@ var dict = {
 	0: """François Viète, the guy who put letters in maths. You've been selected as a potential candidate for ...""",
 	1: """'less evil prime minister than Rishi Sunak'. The trials ahead will test your dedication to the ...""",
 	2: """people of Britain. Failure means banishment back to the circle of hell from whence you came. Good luck.""",
-	3: "give the kid an icecream?",
-	4: "do u wanna kill the child?",
-	5: ""
+	3: ""
 }
-var questions = [4, 5]
+var questions = [0]
 # options to choose from
 # [choiceA, choiceB, karmaA, karmaB]
 var options = [
-	["yes", "no", 100, 0],
-	["save", "kill", 0, -100]
 ]
 
 var lastBody
@@ -33,12 +29,13 @@ onready var SpeechBubble = get_node("SpeechBubble")
 onready var SpeechBubbleText = get_node("SpeechBubble/Speech")
 
 # npcs have 2 frames a standing and a speaking
-var animNames = ["kidStand", "kidSpeak"]
+var animNames = ["npc1Stand", "npc1Speak"]
 
 # idle anim
 func _ready(): 
 	$AnimatedSprite.play(animNames[0])
 	SpeechBubble.hide()
+	$AnimatedSprite.flip_h = true
 	
 func _physics_process(_delta):
 	# Speech only proceeds if the player is interacting and is not choosing
