@@ -7,6 +7,7 @@ var velocity = Vector2()
 var last_direction = Vector2(0, 1)
 var karma = 0.0
 var canMove = true
+var playingGame = false
 var hasTrolley
 
 func get_input():
@@ -60,7 +61,8 @@ func animate_gamer(direction: Vector2):
 func _physics_process(_delta):
 	get_input()
 	animate_gamer(velocity) # animate the player character
-	velocity = move_and_slide(velocity) # move the player character
+	if !playingGame:
+		velocity = move_and_slide(velocity) # move the player character
 	#camera2d = get_node("Camera2D")
 	$HUD/Karma.text = str(karma) # update karma score on hud for debug
 
@@ -73,6 +75,9 @@ func canInteract(toggle):
 
 func setCanMove(boolean):
 	canMove = boolean
+	
+func setPlayingGame(boolean):
+	playingGame = boolean
 	
 func removeFiver():
 	$HUD/Money.text = "Cash Money: £730,455,117"

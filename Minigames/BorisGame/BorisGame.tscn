@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Minigames/BorisGame/grass_floor.png" type="Texture" id=1]
 [ext_resource path="res://Minigames/BorisGame/BorisGame.gd" type="Script" id=2]
@@ -18,30 +18,6 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="GDScript" id=2]
-script/source = "extends Area2D
-
-export var speed = 400
-signal hit
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed(\"down\"):
-		velocity.y += 1
-	if Input.is_action_pressed(\"up\"):
-		velocity.y -= 1
-
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-
-	position += velocity * delta
-"
-
 [node name="BorisGame" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -50,12 +26,12 @@ follow_viewport_enable = true
 script = SubResource( 1 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 7700, 4230 )
+motion_mirroring = Vector2( 1540, 864 )
 
 [node name="field" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 3850, 2160 )
+position = Vector2( 770, 431 )
 texture = ExtResource( 1 )
 
-[node name="Boris" parent="." instance=ExtResource( 4 )]
-position = Vector2( 145, 287 )
-script = SubResource( 2 )
+[node name="PlayBoris" parent="." instance=ExtResource( 4 )]
+position = Vector2( 82, 193 )
+scale = Vector2( 1, 1 )

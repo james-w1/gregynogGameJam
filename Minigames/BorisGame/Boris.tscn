@@ -37,7 +37,7 @@ script = ExtResource( 9 )
 
 [node name="BorisSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="BorisCollision" type="CollisionShape2D" parent="."]
