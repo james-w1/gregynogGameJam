@@ -3,12 +3,12 @@ extends "res://NPC/NPC.gd"
 func _ready(): 
 	# set vars for this instance of the dude
 	dict = {
-		0: "im boris innit ...",
-		1: "u wanna play a game?",
+		0: "Hey! I'm about ready to bowl over some kids, but I'm so exhausted from my comedown after ...",
+		1: "that last party during COVID that I can't do it alone. Can you lend me a hand?",
 		2: ""
 	}
 	options = [
-		["yes", "no", 0, 0]
+		["Yes", "No", 0, 0]
 	]
 	maxSpeech = len(dict) - 1
 	animNames = ["borisStand", "borisSpeak"]

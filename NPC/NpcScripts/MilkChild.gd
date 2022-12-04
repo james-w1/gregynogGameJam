@@ -3,12 +3,12 @@ extends "res://NPC/NPC.gd"
 func _ready(): 
 	# set vars for this instance of the dude
 	dict = {
-		0: "im a kid innit ...",
-		1: "wait take ur hands off my school milk m8",
+		0: "My parents told me not to talk to strangers. ...",
+		1: "Hey! What are you staring at my school milk for?",
 		2: ""
 	}
 	options = [
-		["leave", "steal", 0, -100]
+		["Snatch milk", "Do not", 0, -100]
 	]
 	maxSpeech = len(dict) - 1
 	animNames = ["kidStand", "kidSpeak"]
@@ -17,10 +17,11 @@ func _ready():
 	$AnimatedSprite.flip_h = false
 
 func choiceAActions(num):
-	annoyedText = "stay away from my school milk"
-	
-func choiceBActions(num):
 	startQuicktime = true
+
+func choiceBActions(num):
+	annoyedText = "Stay away from my school milk!"
+
 
 onready var player = get_node("../Player")
 onready var milk = get_node("Milk")
@@ -72,6 +73,6 @@ func _process(delta):
 			lastBody.setCanMove(true)
 			lastBody.canInteract(true)
 			wantsToSpeak = true
-			annoyedText = "stay away from my school milk"
+			annoyedText = "Stay away from my school milk !"
 			mashedX = 0
 			startQuicktime = false

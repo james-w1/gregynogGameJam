@@ -39,14 +39,14 @@ animations = [ {
 "name": "kidStand",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "qsSaved",
-"speed": 5.0
+"name": "borisSpeak",
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "npc1Stand",
+"name": "borisStand",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
@@ -59,24 +59,24 @@ animations = [ {
 "name": "davidSpeak",
 "speed": 8.0
 }, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "npc1Stand",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "shoppingTrolley",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "borisSpeak",
-"speed": 8.0
+"name": "qsSaved",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "trussStand",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "borisStand",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
