@@ -3,12 +3,12 @@ extends "res://NPC/NPC.gd"
 func _ready(): 
 	# set vars for this instance of the dude
 	dict = {
-		0: "PLEASE HELP ME IM STUCK IN QUICKSAND IM GONNA DIE! ...",
-		1: "HELP?",
+		0: "PLEASE HELP ME! I'M STUCK IN QUICKSAND, I'M GONNA DIE! ...",
+		1: "Help him?",
 		2: ""
 	}
 	options = [
-		["yes", "no", 300, -200]
+		["Help", "Do not", 300, -200]
 	]
 	maxSpeech = len(dict) - 1
 	animNames = ["npc1Stand", "npc1Speak"]
@@ -19,9 +19,9 @@ var rescueAnim = false
 
 func choiceAActions(_num):
 	rescueAnim = true
-	annoyedText = "thank you so much, I cant wait to see my kids again"
+	annoyedText = "Thank you so much, I cant wait to see my kids again"
 	wantsToSpeak = false
-	playerForDeeds.addDeed("You helped Jimmothy out of the quicksand. He would've died otherwise. ...")
+	playerForDeeds.addDeed("You helped Johnnothy out of the quicksand. He would've died otherwise. ...")
 	playerForDeeds.addDeed("He didn't pay attention to nature programs that explain how to get out. ...")
 	
 func choiceBActions(_num):

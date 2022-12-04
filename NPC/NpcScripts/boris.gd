@@ -45,7 +45,7 @@ func choiceAActions(num):
 	var blockage = get_node("../RoadBlock1")
 	blockage.clearBlock()
 	
-	annoyedText = "Wow that really hit the spot, Cheers!"
+	annoyedText = "Wow, that really hit the spot. Cheers!"
 	wantsToSpeak = false
 	
 	playerForDeeds.addDeed("You helped Boris bowl over those kids. They deserved it really. ...")

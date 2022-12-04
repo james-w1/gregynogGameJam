@@ -9,7 +9,7 @@ func _ready():
 		3: ""
 	}
 	options = [
-		["Yes", "No", 0, 0]
+		["Sure", "No", 0, 0]
 	]
 	maxSpeech = len(dict) - 1
 	animNames = ["davidStand", "davidSpeak"]
