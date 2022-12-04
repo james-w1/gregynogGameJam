@@ -97,7 +97,7 @@ position = Vector2( 618, 247 )
 z_index = -11
 z_as_relative = false
 frames = SubResource( 8 )
-frame = 2
+frame = 24
 playing = true
 
 [connection signal="body_entered" from="PlayBoris" to="." method="_on_PlayBoris_body_entered"]

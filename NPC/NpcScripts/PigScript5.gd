@@ -13,7 +13,8 @@ func _ready():
 	animNames = ["pigStand", "pigStand"]
 	questions = [1]
 	$AnimatedSprite.play(animNames[0])
-
+	$Shadow.hide()
+	
 func reparentPig():
 	if lastBody.hasPig:
 		$SpeechBubble.show()

@@ -15,7 +15,7 @@ func _ready():
 	animNames = ["shoppingTrolley", "shoppingTrolley"]
 	questions = [3]
 	$AnimatedSprite.play(animNames[0])
-
+	$Shadow.hide()
 
 func reparentTrolley():
 	if !lastBody.hasPig:
