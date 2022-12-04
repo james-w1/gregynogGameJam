@@ -74,9 +74,13 @@ func _on_SpawnTimer_timeout():
 
 func _on_PlayBoris_body_entered(body):
 	if "Child" in body.name:
-		body.queue_free()
 		score -= 1
 		$Score.text = str(score)
+		var sprite = body.get_node("AnimatedSprite")
+		sprite.play("dead")
+		var child_spawn_location = get_node("SpawnPath/SpawnLocation")
+		body.linear_velocity = Vector2(rand_range(0.0, 0.0), 250.0).rotated(rand_range(-30.0, 30.0) + child_spawn_location.rotation + PI / 2)
+		
 
 
 func _on_PlayBoris_body_exited(body):

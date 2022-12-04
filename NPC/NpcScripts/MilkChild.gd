@@ -22,6 +22,9 @@ func choiceAActions(num):
 
 func choiceBActions(num):
 	annoyedText = "Stay away from my school milk!"
+	playerForDeeds.addDeed("You let that kid keep his milk. ...")
+	playerForDeeds.addDeed("...........")
+	playerForDeeds.addDeed("What? Did you want a medal? ...")
 
 
 onready var player = get_node("../Player")
@@ -78,6 +81,3 @@ func _process(delta):
 			annoyedText = "Stay away from my school milk !"
 			mashedX = 0
 			startQuicktime = false
-			playerForDeeds.addDeed("You let that kid keep his milk. ...")
-			playerForDeeds.addDeed("...........")
-			playerForDeeds.addDeed("What? Did you want a medal? ...")

@@ -58,12 +58,8 @@ func recieveJudgement():
 		dict[int(len(dict))] = "You've demonstrated your worth. MI6 agents will arrive shortly to collect you. ..."
 		dict[int(len(dict))] = "In the meantime, feel free to explore hell."
 		
-		annoyedText = "Go on then."
-		wantsToSpeak = false
 	else:
 		dict[int(len(dict))] = "Your thirst for power and disregard for the people mark you as an unsuitable candidate. Begone! "
-		annoyedText = "Your thirst for power and disregard for the people mark you as an unsuitable candidate. Begone!"
-		wantsToSpeak = false
 	
 	# add blank end thing
 	dict[int(len(dict) + 1)] = ""

@@ -4,7 +4,7 @@ func _ready():
 	# set vars for this instance of the dude
 	dict = {
 		0: "Help!! I was just tending to my pigs when they escaped their pen!",
-		1: "Can you put them back in their pen for me?",
+		1: "Can you put them back in their pen over on the right for me?",
 		2: "I'm sure me and the boys from Oxford can rustle up some pig head for you, if that's your thing.",
 		3: ""
 	}

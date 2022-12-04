@@ -33,7 +33,7 @@
 [ext_resource path="res://sprites/grass_floor/grass_floor11.png" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 299.5 )
+extents = Vector2( 15, 299.5 )
 
 [sub_resource type="Curve2D" id=4]
 _data = {
@@ -63,17 +63,19 @@ script = ExtResource( 2 )
 child = ExtResource( 3 )
 
 [node name="PlayBoris" parent="." instance=ExtResource( 4 )]
-position = Vector2( 82, 210 )
+position = Vector2( 127, 210 )
 scale = Vector2( 1, 1 )
+z_index = 1
 
 [node name="Child" parent="." groups=["ChildGroup"] instance=ExtResource( 3 )]
 position = Vector2( 542, -20 )
+z_index = -1
 collision_mask = 0
 
 [node name="ChildDestroyer" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChildDestroyer"]
-position = Vector2( 7, 298.5 )
+position = Vector2( -38, 298.5 )
 shape = SubResource( 2 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
@@ -94,10 +96,10 @@ theme = SubResource( 7 )
 
 [node name="Floor" type="AnimatedSprite" parent="."]
 position = Vector2( 618, 247 )
-z_index = -11
+z_index = -5
 z_as_relative = false
 frames = SubResource( 8 )
-frame = 25
+frame = 19
 playing = true
 
 [connection signal="body_entered" from="PlayBoris" to="." method="_on_PlayBoris_body_entered"]
