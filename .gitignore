@@ -12,5 +12,5 @@ data_*/
 
 # extras
 Comic_Neue
-*.ogg
-*.mp3
+*.ogg*
+*.mp3*
