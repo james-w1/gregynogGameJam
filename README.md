@@ -15,4 +15,4 @@ This is an RPG kinda game that was made in 2 days for a game jam. The theme of t
 ## Some Screenshots
 ![First Encounter](Screenshots/beggar.png)
 ![Boris MiniGame](Screenshots/borisGame.png)
-![Pig Interaction](Screenshots/pickUpPig?.png)
+![Pig Interaction](Screenshots/pickUpPig.png)
